@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Translation Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Chat</h2>
+        <input type="text" id="username" placeholder="Enter your name" required>
+        
+        <label for="language">Select Language:</label>
+        <select id="language" required>
+            <option value="mr">Marathi</option>
+            <option value="hi">Hindi</option>
+            <option value="en">English</option>
+            <option value="ur">Urdu</option>
+            <option value="ml">Malayalam</option>
+            <option value="zh">Chinese</option>
+            <option value="fr">French</option>
+        </select>
+        
+        <button onclick="joinChat()">Join Chat</button>
+    </div>
+
+    <div id="chat" style="display:none;">
+        <h2>Real Time Translation Chat</h2>
+        <div id="messages"></div>
+        <input type="text" id="message" placeholder="Type a message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
